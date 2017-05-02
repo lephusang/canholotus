@@ -1,10 +1,14 @@
+//please contact me giaiphapthuonghieu.org@gmail.com
+//website http://giaiphapthuonghieu.vn or http://faceseo.vn
+// Banner Đầu Trang
+
 (function($) {
     $.fn.linhnguyen = function(options) {        
         var defaults = {  
 	    	animation: 'fadeAndPop', //fade, fadeAndPop, none
 		    animationspeed: 300, //how fast animtions are
 		    closeonbackgroundclick: true, //if you click background will modal close?
-		    dismissmodalclass: 'close-phusang-modal' //the class of a button or element that will close an open modal
+		    dismissmodalclass: 'close-linhnguyen-modal' //the class of a button or element that will close an open modal
     	}; 
 
         var options = $.extend({}, defaults, options); 
@@ -14,12 +18,12 @@
         		topMeasure  = parseInt(modal.css('top')),
 				topOffset = modal.height() + topMeasure,
           		locked = false,
-				modalBG = $('.phusang-modal-bg');
+				modalBG = $('.linhnguyen-modal-bg');
 
 			if(modalBG.length == 0) {
-				modalBG = $('<div class="phusang-modal-bg" />').insertAfter(modal);
+				modalBG = $('<div class="linhnguyen-modal-bg" />').insertAfter(modal);
 			}		    
-			modal.bind('phusang:open', function () {
+			modal.bind('linhnguyen:open', function () {
 			  modalBG.unbind('click.modalEvent');
 				$('.' + options.dismissmodalclass).unbind('click.modalEvent');
 				if(!locked) {
@@ -45,10 +49,10 @@
 						unlockModal()				
 					}
 				}
-				modal.unbind('phusang:open');
+				modal.unbind('linhnguyen:open');
 			}); 	
 
-			modal.bind('phusang:close', function () {
+			modal.bind('linhnguyen:close', function () {
 			  if(!locked) {
 					lockModal();
 					if(options.animation == "fadeAndPop") {
@@ -75,24 +79,24 @@
 						modalBG.css({'display' : 'none'});	
 					}		
 				}
-				modal.unbind('phusang:close');
+				modal.unbind('linhnguyen:close');
 			});     
    	
-    	modal.trigger('phusang:open')
+    	modal.trigger('linhnguyen:open')
 			
 			//Close Modal Listeners
 			var closeButton = $('.' + options.dismissmodalclass).bind('click.modalEvent', function () {
-			  modal.trigger('phusang:close')
+			  modal.trigger('linhnguyen:close')
 			});
 			
 			if(options.closeonbackgroundclick) {
 				modalBG.css({"cursor":"pointer"})
 				modalBG.bind('click.modalEvent', function () {
-				  modal.trigger('phusang:close')
+				  modal.trigger('linhnguyen:close')
 				});
 			}
 			$('body').keyup(function(e) {
-        		if(e.which===27){ modal.trigger('phusang:close'); } // 27 is the keycode for the Escape key
+        		if(e.which===27){ modal.trigger('linhnguyen:close'); } // 27 is the keycode for the Escape key
 			});
 			
 			function unlockModal() { 
@@ -112,9 +116,9 @@ $(window).load(function() {
 			document.cookie = "adfpopunder1=adf";
 			var divpopup = document.createElement("div");
 			$(divpopup).attr('id', 'myModal');
-			$(divpopup).attr('class', 'phusang-modal');
+			$(divpopup).attr('class', 'linhnguyen-modal');
 			$( "body" ).append(divpopup);
-			$("#myModal").html("<a href='http://bit.ly/2qmQtbq' target='_blank'><img src='https://2.bp.blogspot.com/-zP0I6svY9Rk/WP79V-wMeNI/AAAAAAAAC8E/8_L9QTx5MYsqXc2Kto4HSL90xo4mVQXAACLcB/s640/5-van-de-can-biet-khi-mua-jamila-khang-dien.png' width='500px'/><br/>Jamila Khang Điền Quận 9</a>. Căn Hộ Dưới 1 Tỷ Cực Khủng <h2><a class='close-phusang-modal'>X</a></h2>");
-			$('#myModal').phusang($('#myModal').data());
+			$("#myModal").html("<a href='http://bit.ly/2qmQtbq' target='_blank'><img src='https://2.bp.blogspot.com/-zP0I6svY9Rk/WP79V-wMeNI/AAAAAAAAC8E/8_L9QTx5MYsqXc2Kto4HSL90xo4mVQXAACLcB/s640/5-van-de-can-biet-khi-mua-jamila-khang-dien.png' width='500px'/><br/>Jamila Khang Điền Quận 9</a>. Căn Hộ Dưới 1 Tỷ Cực Khủng <h2><a class='close-linhnguyen-modal'>X</a></h2>");
+			$('#myModal').linhnguyen($('#myModal').data());
 		}
 });
