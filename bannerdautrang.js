@@ -114,7 +114,7 @@ $(window).load(function() {
 			$(divpopup).attr('id', 'myModal');
 			$(divpopup).attr('class', 'phusang-modal');
 			$( "body" ).append(divpopup);
-			$("#myModal").html("<a href='http://bit.ly/2qmQtbq' target='_blank'><img src='https://2.bp.blogspot.com/-zP0I6svY9Rk/WP79V-wMeNI/AAAAAAAAC8E/8_L9QTx5MYsqXc2Kto4HSL90xo4mVQXAACLcB/s640/5-van-de-can-biet-khi-mua-jamila-khang-dien.png' width='500px'/><br/>Jamila Khang Điền Quận 9</a>. Căn Hộ Giá Tốt Tại Quận 9<h2><a class='close-phusang-modal'>X</a></h2>");
+			$("#myModal").html("<a href='http://bit.ly/2qA2c3I' target='_blank'><img src='https://2.bp.blogspot.com/-zP0I6svY9Rk/WP79V-wMeNI/AAAAAAAAC8E/8_L9QTx5MYsqXc2Kto4HSL90xo4mVQXAACLcB/s640/5-van-de-can-biet-khi-mua-jamila-khang-dien.png' width='500px'/><br/>Jamila Khang Điền Quận 9</a>. Căn Hộ Giá Tốt Tại Quận 9<h2><a class='close-phusang-modal'>X</a></h2>");
 			$('#myModal').phusang($('#myModal').data());
 		}
 });
